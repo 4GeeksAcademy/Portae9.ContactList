@@ -21,19 +21,19 @@ export const Navbar = () => {
 							<Link className="nav-link" to="/planets">Planets</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link" to="/contacts">Contacts</Link>
+							<Link className="nav-link" to="/contact-list">ContactList</Link>
 						</li>
 					</ul>
 					<form className="d-flex" role="search">
 						<input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-						<div class="dropdown">
-							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<div className="dropdown">
+							<button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Dropdown button
 							</button>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Action</a></li>
-								<li><a class="dropdown-item" href="#">Another action</a></li>
-								<li><a class="dropdown-item" href="#">Something else here</a></li>
+							<ul className="dropdown-menu">
+								<li><a className="dropdown-item" href="#">Action</a></li>
+								<li><a className="dropdown-item" href="#">Another action</a></li>
+								<li><a className="dropdown-item" href="#">Something else here</a></li>
 							</ul>
 						</div>
 					</form>
