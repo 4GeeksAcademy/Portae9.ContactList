@@ -33,12 +33,11 @@ export const router = createBrowserRouter(
       <Route path="/single/:theId" element={<Single />} />  {/* Dynamic route for single items */}
       <Route path="/demo" element={<Demo />} />
       <Route path="/contact-list" element={<ContactList />} />
-      <Route path="/contact-edit" element={<ContactEdit />} />
+      <Route path="/contact-edit/:id" element={<ContactEdit />} />
       <Route path="/contact-add" element={<ContactAdd />} />
       <Route path="/characters" element={<Characters />} />
       <Route path="/starships" element={<Starships />} />
       <Route path="/planets" element={<Planets />} />
-       <Route path="/contact-list" element={<ContactList/>} />
     </Route>
   )
 );

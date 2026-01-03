@@ -11,9 +11,11 @@ export const ContactAdd = () => {
     const [phone, setPhone] = useState(store.contactInfo.phone)
     const [email, setEmail] = useState(store.contactInfo.email)
     const [address, setAddress] = useState(store.contactInfo.address)
+    const host = "https://playground.4geeks.com/contact"
+    const slug = "portae9"
 
     const getAgenda = async () => {
-        const response = await fetch(`${store.host}/agendas/${store.slug}`, {
+        const response = await fetch(`${host}/agendas/${slug}`, {
             method: "GET",
         })
         if (!response.ok) {
@@ -35,7 +37,7 @@ export const ContactAdd = () => {
             "email": email,
             "address": address
         };
-        const response = await fetch(`${store.host}/agendas/${store.slug}/contacts`, {
+        const response = await fetch(`${host}/agendas/${slug}/contacts`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body)
@@ -52,7 +54,7 @@ export const ContactAdd = () => {
             "slug": store.slug,
             "id": ""
         };
-        const response = await fetch(`${store.host}/agendas/${store.slug}`, {
+        const response = await fetch(`${host}/agendas/${slug}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body)
