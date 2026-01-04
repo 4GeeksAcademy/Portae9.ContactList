@@ -15,6 +15,9 @@ import { ContactAdd } from "./pages/ContactAdd";
 import { Characters } from "./pages/Characters.jsx";
 import { Starship } from "./pages/Starship.jsx";
 import { Planets } from "./pages/Planets.jsx";
+// import { PlanetsDetails } from "./pages/PlanetsDetails.jsx";
+// import { StarshipDetails } from "./pages/StarshipDetails.jsx";
+
 // import { Contacts } from "./pages/Contacts.jsx";
 
 export const router = createBrowserRouter(
@@ -38,6 +41,8 @@ export const router = createBrowserRouter(
       <Route path="/characters" element={<Characters />} />
       <Route path="/starships" element={<Starship />} />
       <Route path="/planets" element={<Planets />} />
+      {/* <Route path="/planets-details" element={<PlanetsDetails />} /> */}
+      {/* <Route path="/starship-details" element={<StarshipDetails />} /> */}
     </Route>
   )
 );

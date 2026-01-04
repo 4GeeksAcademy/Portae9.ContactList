@@ -1,6 +1,9 @@
 export const initialStore=()=>{
 
   return{
+
+    host: "https://playground.4geeks.com/contact",
+     slug: "portae9",
     contactInfo: {"name": "",
             "phone": "",
             "email": "",
@@ -15,6 +18,8 @@ export const initialStore=()=>{
 export default function storeReducer(store, action = {}) {
 
   switch (action.type) {
+
+
 
     case 'set_contacts':
       return {
