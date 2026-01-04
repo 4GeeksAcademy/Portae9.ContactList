@@ -37,26 +37,48 @@ export const ContactList = () => {
     getContacts();
   }, []);
 
+ 
   return (
     <>
-      <Link to={`/contact-add`}>
-        <button className="btn btn-primary btn-sm">Add Contact</button>
-      </Link>
-      <div className="container">
-        {store.contacts.map((contacts) => (
-          <div key={contacts.id} className="card mt-3">
-            <div className="card-body">
-              <h5>{contacts.name}</h5>
-              <p>{contacts.email}</p>
-              <p>{contacts.phone}</p>
-              <p>{contacts.address}</p>
-              <Link to={`/contact-edit/${contacts.id}`}>
-                <button className="btn btn-primary btn-sm">Edit</button>
+      <div className="d-flex flex-column align-items-center">
+        <div className="w-100" style={{ maxWidth: 550 }}>
+          <div className="d-flex justify-content-between align-items-center mt-5 w-100">
+            <h1 className="m-0" style={{ color: "#f5c542" }}>Contact List:</h1>
+
+            <div>
+              <Link to={`/contact-add`}>
+                <button className="btn btn-outline-primary btn-sm ">Add Contact</button>
               </Link>
-              <button onClick={() => handleDelete(contacts.id)} className="btn btn-danger btn-sm">Delete Contact</button>
             </div>
           </div>
-        ))}
+
+          <div className="container">
+            {store.contacts.map((contacts) => (
+              <div key={contacts.id} className="card mt-3">
+                <div className="card-body">
+                  <h5>{contacts.name}</h5>
+                  <p>{contacts.email}</p>
+                  <p>{contacts.phone}</p>
+                  <p>{contacts.address}</p>
+
+                  <div className="d-flex gap-2 mt-3">
+                    <Link to={`/contact-edit/${contacts.id}`}>
+                      <button className="btn btn-outline-primary btn-sm">Edit</button>
+                    </Link>
+
+                    <button
+                      onClick={() => handleDelete(contacts.id)}
+                      className="btn btn-outline-danger btn-sm"
+                    >
+                      Delete Contact
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
       </div>
     </>
   );

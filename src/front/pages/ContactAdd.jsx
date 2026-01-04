@@ -83,7 +83,7 @@ export const ContactAdd = () => {
         <>
             {/* Add contact form */}
             <div className="container-fluid d-flex flex-column justify-content-center align-items-center pt-5 col-12 col-sm-6 col-md-6 col-lg-8">
-                <h1 className="pb-2" style={{ color: "yellow" }}>Add Contact:</h1>
+                <h1 className="pb-2" style={{ color: "#f5c542" }}>Add Contact:</h1>
                 <form onSubmit={handleSubmit}>
                     {/* full name input */}
                     <div className="input-group mb-3">
