@@ -59,20 +59,19 @@ export const ContactList = () => {
 
       <div className="d-flex flex-column align-items-center w-75 mx-auto">
         {store.contacts.map((contacts) => (
-          <div key={contacts.id} className="card mt-3">
+          <div key={contacts.id} className="card mt-3 bg-info bg-info bg-opacity-10">
             <div className="card-body">
 
               <div className="row">
 
 
-                <div className="col-8">
-                  <h5 className="mb-1">{contacts.name}</h5>
-                  <p className="mb-1">{contacts.email}</p>
-                  <p className="mb-1">{contacts.phone}</p>
-                  <p className="mb-1">{contacts.address}</p>
-
+                <div className="col-8 text-danger">
+                  <h5 className="mb-1 fs-5 fw-bold">{contacts.name}</h5>
+                  <p className="mb-1 fs-6">{contacts.email}</p>
+                  <p className="mb-1 fs-6">{contacts.phone}</p>
+                  <p className="mb-1 fs-6">{contacts.address}</p>
                 </div>
-                <div className="col-4">
+                <div className="col-4 d-flex justify-content-center align-items-center">
                   <img
                     src="https://i.pinimg.com/736x/e0/4e/2a/e04e2ae6071f6a40201e6906b40b9d75.jpg"
                     alt=""

@@ -7,6 +7,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello Rigo</title>
+    <style>
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+
+    /* Capas de estrellas */
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, #fff, transparent),
+      radial-gradient(1px 1px at 30% 80%, #fff, transparent),
+      radial-gradient(1px 1px at 50% 50%, #fff, transparent),
+      radial-gradient(2px 2px at 70% 30%, #fff, transparent),
+      radial-gradient(1px 1px at 90% 70%, #fff, transparent);
+
+    background-repeat: repeat;
+    background-size: 400px 400px;
+  }
+
+  /* Profundidad espacial */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.06),
+      rgba(0,0,0,0.9) 70%
+    );
+    pointer-events: none;
+  }
+
+  /* Asegura que React ocupe toda la pantalla */
+  #root {
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+</style>
   </head>
   <body>
     <div id="root" class="d-flex flex-column min-vh-100"></div>

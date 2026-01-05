@@ -10,12 +10,12 @@ export const Planets = () => {
   const { dispatch } = useGlobalReducer();
   const [planets, setPlanets] = useState([])
   const handleDetails = (planeta) => {
-   
+
     dispatch({
       type: 'planets_details',
       payload: planeta
     })
- 
+
     navigate('/planets-details')
   }
   const getPlanets = async () => {
@@ -54,7 +54,8 @@ export const Planets = () => {
                 <div className="card-body">
                   <h5 className="card-title">{item.name}</h5>
                   <div className="d-flex justify-content-between">
-                    <span className="btn btn-secondary" onClick={() => handleDetails(item)}>Details</span>
+                    <span className="btn btn-secondary" to={`/planets-details/${item.uid}`}
+                    >Details</span>
                     <Link className="btn btn-outline-warning" to="/planets">
                       <i className="far fa-heart fa-lg"></i>
                     </Link>
@@ -64,7 +65,7 @@ export const Planets = () => {
             </div>
           )
           :
-        <h1>Cargando</h1>
+          <h1>Cargando</h1>
           // <Spinners />
         }
       </div>

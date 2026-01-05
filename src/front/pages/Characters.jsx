@@ -56,11 +56,11 @@ export const Characters = () => {
 
     getCharacters()
   }, [])
-  
 
-  
+
+
   return (
-    <div className="container mt-3">
+    <div className="container mt-3q">
       <h1 className="text-center">Characters</h1>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2">
         {characters ? characters.map((item) =>
@@ -76,7 +76,11 @@ export const Characters = () => {
                   >
                     Details
                   </Link>
-                  <button onClick={() => handleFavorite(item)}>
+                  <button
+                    onClick={() => handleFavorite(item)}
+                    type="button"
+                    className="btn btn-outline-light bg-transparent shadow-none"
+                  >
                     <i className="far fa-heart fa-lg"></i>
                   </button>
                 </div>
