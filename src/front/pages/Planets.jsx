@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 // import { Spinners } from "../components/Spinners.jsx";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 export const Planets = () => {

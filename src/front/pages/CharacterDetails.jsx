@@ -1,29 +1,36 @@
 import { useEffect, useState } from "react";
 import useGlobalReducer from "../hooks/useGlobalReducer"
+import { useParams } from "react-router-dom";
+
 export const CharacterDetails = () => {
-  const { store } = useGlobalReducer();
-  const [ personajeDetails, setPersonajeDetails ] = useState({})
-  const getCharacterDetails = async () => {
-    const response = await fetch(store.currentCharacter.url)
-    if (!response.ok){
-      // trato el error
-      console.log('Error', response.status, response.statusText)
-      return
-    }
-    const data = await response.json()
-    console.log(data.result.properties)
-    setPersonajeDetails(data.result.properties)
-  }
+
+
+  const { store , dispatch } = useGlobalReducer();
+  const [ character, setCharacter] = useState({})
+  const { uid } = useParams();
+
   useEffect(() => {
-    getCharacterDetails()
-  }, [])
+        const getCharacterDetails = async () => {
+            const response = await fetch(`https://www.swapi.tech/api/people/${uid}`);
+            const data = await response.json();
+            setCharacter(data.result.properties);
+        };
+
+        getCharacterDetails();
+    }, [uid]);
+
+
   return (
     <div className="container mt-3">
       <h1 className="text-center">Detalles del Personaje</h1>
-      <p>{store.currentCharacter.name}</p>
+      <p>{character.name}</p>
       <ul className="list-group">
-        <li className="list-group-item">Color de piel: {personajeDetails.skin_color}</li>
-        <li className="list-group-item">Color de ojos: {personajeDetails.eye_color}</li>
+        <li className="list-group-item">Color de piel: {character.skin_color}</li>
+        <li className="list-group-item">Color de ojos: {character.eye_color}</li>
+          <li className="list-group-item">Color de cabello: {character.hair_color}</li>
+         <li className="list-group-item">Altura: {character.height}</li>
+         <li className="list-group-item">Sexo: {character.gender}</li>
+          <li className="list-group-item">Año de nacimiento: {character.birth_year}</li>
       </ul>
     </div>
   )
