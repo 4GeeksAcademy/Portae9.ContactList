@@ -13,6 +13,7 @@ export const Characters = () => {
 
   // const handleDetails = async (personaje) => {
   //       const uri = personaje.url;
+  
   //       const response = await fetch(uri);
   //       const data = await response.json();
 

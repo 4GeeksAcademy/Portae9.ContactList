@@ -54,11 +54,13 @@ export const Planets = () => {
                 <div className="card-body">
                   <h5 className="card-title">{item.name}</h5>
                   <div className="d-flex justify-content-between">
-                    <span className="btn btn-secondary" to={`/planets-details/${item.uid}`}
-                    >Details</span>
-                    <Link className="btn btn-outline-warning" to="/planets">
-                      <i className="far fa-heart fa-lg"></i>
+                    <Link to={`/planets-details/${item.uid}`}>
+                      <span className="btn btn-secondary"
+                      >Details</span>
                     </Link>
+                    <button className="btn btn-outline-warning">
+                      <i className="far fa-heart fa-lg"></i>
+                    </button>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-
+import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 export const Navbar = () => {
+	const { store, dispatch } = useGlobalReducer();
 
 	return (
 		<nav className="navbar navbar-expand-sm bg-body-tertiary">
@@ -27,13 +28,33 @@ export const Navbar = () => {
 					<form className="d-flex" role="search">
 						<input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
 						<div className="dropdown">
-							<button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Dropdown button
+							<button
+								className="btn btn-secondary dropdown-toggle"
+								type="button"
+								data-bs-toggle="dropdown"
+							>
+								Favoritos ({store.favorites.length})
 							</button>
+
 							<ul className="dropdown-menu">
-								<li><a className="dropdown-item" href="#">Action</a></li>
-								<li><a className="dropdown-item" href="#">Another action</a></li>
-								<li><a className="dropdown-item" href="#">Something else here</a></li>
+								{store.favorites.length === 0 && (
+									<li className="dropdown-item">
+										No hay favoritos
+									</li>
+								)}
+
+								{store.favorites.map((item, index) => (
+									<li key={index} className="dropdown-item">
+										{item.name} ({item.type})
+										<button
+											type="button"
+											className="btn btn-sm btn-danger ms-2"
+											onClick={() => actions.removeFavorite(index)}
+										>
+											<i className="fa-solid fa-trash-can"></i>
+										</button>
+									</li>
+								))}
 							</ul>
 						</div>
 					</form>

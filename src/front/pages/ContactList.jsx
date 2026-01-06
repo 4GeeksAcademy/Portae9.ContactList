@@ -59,7 +59,7 @@ export const ContactList = () => {
 
       <div className="d-flex flex-column align-items-center w-75 mx-auto">
         {store.contacts.map((contacts) => (
-          <div key={contacts.id} className="card mt-3 bg-info bg-info bg-opacity-10">
+          <div key={contacts.id} className="card mt-3 bg-info bg-info bg-opacity">
             <div className="card-body">
 
               <div className="row">

@@ -32,6 +32,11 @@ export default function storeReducer(store, action = {}) {
     case "add_favorite":
       return { ...store, favorites: [...store.favorites, action.payload] };
 
+  case "remove_favorite":
+    return {
+        ...store,
+        favorites: store.favorites.filter((item, index) => index !== action.payload)
+    };
     default:
       console.log("Unknown action.");
       return store;

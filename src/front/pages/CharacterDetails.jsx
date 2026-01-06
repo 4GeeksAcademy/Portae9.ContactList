@@ -8,7 +8,7 @@ export const CharacterDetails = () => {
   const { store , dispatch } = useGlobalReducer();
   const [ character, setCharacter] = useState({})
   const { uid } = useParams();
-
+  
   useEffect(() => {
         const getCharacterDetails = async () => {
             const response = await fetch(`https://www.swapi.tech/api/people/${uid}`);
@@ -23,7 +23,8 @@ export const CharacterDetails = () => {
   return (
     <div className="container mt-3">
       <h1 className="text-center">Detalles del Personaje</h1>
-      <p>{character.name}</p>
+      <h2 className>{character.name}</h2>
+      <img className="img_character" src={`https://github.com/breatheco-de/swapi-images/blob/master/public/images/people/${uid}.jpg?raw=true`} />
       <ul className="list-group">
         <li className="list-group-item">Color de piel: {character.skin_color}</li>
         <li className="list-group-item">Color de ojos: {character.eye_color}</li>

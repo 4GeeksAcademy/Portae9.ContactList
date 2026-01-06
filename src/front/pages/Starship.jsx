@@ -53,10 +53,13 @@ export const Starship = () => {
                 <div className="card-body">
                   <h5 className="card-title">{item.name}</h5>
                   <div className="d-flex justify-content-between">
-                    <span className="btn btn-secondary" onClick={() => handleDetails(item)}>Details</span>
-                    <Link className="btn btn-outline-warning" to="/vehicles">
-                      <i className="far fa-heart fa-lg"></i>
+                     <Link to={`/starship-details/${item.uid}`}>
+                      <span className="btn btn-secondary"
+                      >Details</span>
                     </Link>
+                    <button className="btn btn-outline-warning">
+                      <i className="far fa-heart fa-lg"></i>
+                    </button>
                   </div>
                 </div>
               </div>
