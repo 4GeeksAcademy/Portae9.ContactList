@@ -42,13 +42,13 @@ export const Starship = () => {
     getVehicles()
   }, [])
   return (
-    <div className="container mt-3">
-      <h1 className="text-center">Vehicles</h1>
+    <div className="container sw-list-itemmt-3">
+      <h1 className="text-center text-center sw-title">Vehicles</h1>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2">
         {vehicles ?
           vehicles.map((item) =>
             <div className="col" key={item.uid}>
-              <div className="card border-dark rounded my-3 mx-2 text-bg-dark">
+              <div className="card border-dark rounded my-3 mx-2 bg-galactic-deep">
                 <img alt="" src={`https://github.com/breatheco-de/swapi-images/blob/master/public/images/vehicles/${item.uid}.jpg?raw=true`} />
                 <div className="card-body">
                   <h5 className="card-title">{item.name}</h5>

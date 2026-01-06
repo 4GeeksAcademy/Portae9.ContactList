@@ -61,12 +61,12 @@ export const Characters = () => {
 
 
   return (
-    <div className="container mt-3q">
-      <h1 className="text-center">Characters</h1>
+    <div className="container mt-3">
+     <h1 className="text-center sw-title">Characters</h1>
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2">
         {characters ? characters.map((item) =>
           <div className="col" key={item.uid}>
-            <div className="card border-dark rounded my-3 mx-2 text-bg-dark">
+            <div className="card border-dark rounded my-3 mx-2 bg-galactic-deep">
               <img alt="" src={`https://github.com/breatheco-de/swapi-images/blob/master/public/images/people/${item.uid}.jpg?raw=true`} />
               <div className="card-body">
                 <h5 className="card-title">{item.name}</h5>
@@ -82,7 +82,7 @@ export const Characters = () => {
                     type="button"
                     className="btn btn-outline-light bg-transparent shadow-none"
                   >
-                    <i className="far fa-heart fa-lg"></i>
+                    <i className="far fa-heart fa-lg text-warning"></i>
                   </button>
                 </div>
               </div>

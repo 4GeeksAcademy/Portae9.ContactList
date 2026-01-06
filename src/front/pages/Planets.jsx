@@ -44,12 +44,13 @@ export const Planets = () => {
   }, [])
   return (
     <div className="container mt-3">
-      <h1 className="text-center">Planets</h1>
+      <h1 className="text-center sw-title">Planets</h1>
+      
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2">
         {planets ?
           planets.map((item) =>
             <div className="col" key={item.uid}>
-              <div className="card border-dark rounded my-3 mx-2 text-bg-dark">
+              <div className="card border-dark rounded my-3 mx-2 bg-galactic-deep">
                 <img alt="" src={`https://github.com/breatheco-de/swapi-images/blob/master/public/images/planets/${item.uid}.jpg?raw=true`} />
                 <div className="card-body">
                   <h5 className="card-title">{item.name}</h5>

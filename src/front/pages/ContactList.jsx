@@ -41,14 +41,14 @@ export const ContactList = () => {
     <>
       <div className="d-flex justify-content-center">
         <div className="w-100" style={{ maxWidth: 550 }}>
-          <div className="d-flex justify-content-between align-items-center mt-5 w-100">
-            <h1 className="m-0" style={{ color: "#f5c542" }}>
+          <div className="text-center mt-3">
+            <h1 className="text-center sw-title" style={{ color: "#f5c542" }}>
               Contact List:
             </h1>
 
             <div>
               <Link to={`/contact-add`}>
-                <button className="btn btn-outline-primary btn-sm">
+              <button className="btn btn-outline-warning btn-sm my-3">
                   Add Contact
                 </button>
               </Link>
@@ -59,7 +59,7 @@ export const ContactList = () => {
 
       <div className="d-flex flex-column align-items-center w-75 mx-auto">
         {store.contacts.map((contacts) => (
-          <div key={contacts.id} className="card mt-3 bg-info bg-info bg-opacity">
+          <div key={contacts.id} className="card border-dark rounded my-3 mx-2 bg-galactic-deep">
             <div className="card-body">
 
               <div className="row">

@@ -4,7 +4,7 @@ export const Navbar = () => {
 	const { store, dispatch } = useGlobalReducer();
 
 	return (
-		<nav className="navbar navbar-expand-sm bg-body-tertiary">
+		<nav className="navbar navbar-expand-sm navbar-dark card mt-3 bg-sw-galactic">
 			<div className="container-fluid">
 				<Link className="navbar-brand" to="#">Star Wars</Link>
 				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
