@@ -22,7 +22,7 @@ export const Home = () => {
     return () => audioRef.current?.pause();
   }, []);
 
-  // Texto dividido en líneas más cortas al inicio, líneas finales limitadas
+
   const lines = [
     "Hace mucho tiempo,",
     "en una galaxia muy, muy lejana…",
@@ -41,7 +41,7 @@ export const Home = () => {
       overflow: 'hidden',
       fontFamily: "'Arial', sans-serif",
       color: '#feda4a',
-      perspective: '1200px', // perspectiva fuerte
+      perspective: '1200px', 
       position: 'relative'
     }}>
       {/* Crawl */}
@@ -57,9 +57,9 @@ export const Home = () => {
       }}>
         <div style={{
           width: '80%',
-          maxWidth: '1200px', // límite para que las líneas inferiores no se salgan
+          maxWidth: '1200px',
           textAlign: 'center',
-          transform: 'rotateX(55deg)', // inclinación fuerte hacia el horizonte
+          transform: 'rotateX(55deg)', 
         }}>
           {lines.map((line, index) => (
             <p key={index} style={{
@@ -67,7 +67,7 @@ export const Home = () => {
               lineHeight: '4.2rem',
               fontWeight: 'bold',
               marginBottom: '2rem',
-              wordWrap: 'break-word' // para que no se exceda del ancho
+              wordWrap: 'break-word' 
             }}>
               {line}
             </p>
