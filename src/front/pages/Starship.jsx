@@ -8,15 +8,17 @@ export const Starship = () => {
   const navigate = useNavigate();
   const { dispatch } = useGlobalReducer();
   const [vehicles, setVehicles] = useState([])
-  const handleDetails = (nave) => {
-   
+
+  const handleFavorite = (item, type) => {
     dispatch({
-      type: 'vehicles_details',
-      payload: nave
-    })
- 
-    navigate('/vehicles-details')
-  }
+      type: "add_favorite",
+      payload: {
+        name: item.name,
+        type: type
+      }
+    });
+  };
+
   const getVehicles = async () => {
     const naves = JSON.parse(localStorage.getItem('vehicles'))
     console.log(naves)
@@ -57,9 +59,13 @@ export const Starship = () => {
                       <span className="btn btn-secondary"
                       >Details</span>
                     </Link>
-                    <button className="btn btn-outline-warning">
-                      <i className="far fa-heart fa-lg"></i>
-                    </button>
+                    <button
+                    onClick={() => handleFavorite(item)}
+                    type="button"
+                    className="btn btn-outline-light bg-transparent shadow-none"
+                  >
+                    <i className="far fa-heart fa-lg text-warning"></i>
+                  </button>
                   </div>
                 </div>
               </div>

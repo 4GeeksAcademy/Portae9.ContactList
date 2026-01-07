@@ -9,27 +9,30 @@ export const Planets = () => {
   const navigate = useNavigate();
   const { dispatch } = useGlobalReducer();
   const [planets, setPlanets] = useState([])
-  const handleDetails = (planeta) => {
 
+  const handleFavorite = (item, type) => {
     dispatch({
-      type: 'planets_details',
-      payload: planeta
-    })
+      type: "add_favorite",
+      payload: {
+        name: item.name,
+        type: type
+      }
+    });
+  };
 
-    navigate('/planets-details')
-  }
+
   const getPlanets = async () => {
-    const planetas = JSON.parse(localStorage.getItem('planets'))
+    let planetas = JSON.parse(localStorage.getItem('planets'))
     console.log(planetas)
     if (!planetas) {
-      const uri = `${swapiHost}/people`
+      const uri = `${swapiHost}/planets`
       const response = await fetch(uri)
       if (!response.ok) {
         // tratamos el error
         console.log('Error:', response.status, response.statusText)
         return
       }
-      let data = await response.json()
+      const data = await response.json()
       localStorage.setItem('planets', JSON.stringify(data.results))
       planetas = data.results
     }
@@ -45,7 +48,7 @@ export const Planets = () => {
   return (
     <div className="container mt-3">
       <h1 className="text-center sw-title">Planets</h1>
-      
+
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2">
         {planets ?
           planets.map((item) =>
@@ -59,8 +62,12 @@ export const Planets = () => {
                       <span className="btn btn-secondary"
                       >Details</span>
                     </Link>
-                    <button className="btn btn-outline-warning">
-                      <i className="far fa-heart fa-lg"></i>
+                    <button
+                      onClick={() => handleFavorite(item)}
+                      type="button"
+                      className="btn btn-outline-light bg-transparent shadow-none"
+                    >
+                      <i className="far fa-heart fa-lg text-warning"></i>
                     </button>
                   </div>
                 </div>

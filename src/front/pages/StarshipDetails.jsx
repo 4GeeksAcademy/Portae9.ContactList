@@ -22,22 +22,20 @@ export const StarshipDetails = () => {
 
   return (
     <div className="container mt-3">
-      <h1 className="text-center">Detalles de la Nave</h1>
-
+      <h1 className="text-center sw-text-galactic">Detalles de la Nave</h1>
+          <h2 className="sw-text-galactic-soft"> <strong>Nombre:</strong> {starship.name} </h2>
+ <img className="img_vehicles" src={`https://github.com/breatheco-de/swapi-images/blob/master/public/images/vehicles/${uid}.jpg?raw=true`} />
       <ul className="list-group">
-        <li className="list-group-item">
-          <strong>Nombre:</strong> {starship.name}
-        </li>
-        <li className="list-group-item">
+        <li className="list-group-item sw-list-item">
           <strong>Modelo:</strong> {starship.model}
         </li>
-        <li className="list-group-item">
+        <li className="list-group-item sw-list-item">
           <strong>Pasajeros:</strong> {starship.passengers}
         </li>
-        <li className="list-group-item">
+        <li className="list-group-item sw-list-item">
           <strong>Capacidad de carga:</strong> {starship.cargo_capacity}
         </li>
-        <li className="list-group-item">
+        <li className="list-group-item sw-list-item">
           <strong>Velocidad máxima:</strong> {starship.max_atmosphering_speed}
         </li>
       </ul>

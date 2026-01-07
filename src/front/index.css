@@ -60,7 +60,6 @@ body {
   color: #e3eaf2;
 }
 
-/* 🌌 NEBULOSA */
 .bg-galactic-deep::before {
   content: "";
   position: absolute;
@@ -72,7 +71,7 @@ body {
   pointer-events: none;
 }
 
-/* ✨ ESTRELLAS */
+
 .bg-galactic-deep::after {
   content: "";
   position: absolute;
@@ -86,20 +85,19 @@ body {
   pointer-events: none;
 }
 
-/* 🌌 Movimiento ultra lento */
 @keyframes nebulaMove {
   0%   { transform: translate(0, 0); }
   50%  { transform: translate(-30px, 20px); }
   100% { transform: translate(0, 0); }
 }
 
-/* ✨ Parpadeo suave */
+
 @keyframes starsTwinkle {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 0.8; }
 }
 
-/* LIST ITEM GALÁCTICO – AZUL ELÉCTRICO */
+
 .sw-list-item {
   background: linear-gradient(
     135deg,
@@ -117,7 +115,7 @@ body {
   transition: background 0.3s ease;
 }
 
-/* LÍNEA DE ENERGÍA ENTRE ITEMS */
+
 .sw-list-item::after {
   content: "";
   position: absolute;
@@ -136,7 +134,7 @@ body {
   box-shadow: 0 0 8px rgba(120, 190, 255, 0.6);
 }
 
-/* HOVER ENERGÉTICO SUAVE */
+
 .sw-list-item:hover {
   background: linear-gradient(
     135deg,

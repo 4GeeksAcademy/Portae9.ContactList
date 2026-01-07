@@ -6,7 +6,7 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-sm navbar-dark card mt-3 bg-sw-galactic">
 			<div className="container-fluid">
-				<Link className="navbar-brand" to="#">Star Wars</Link>
+				<Link className="navbar-brand" to="/">Star Wars</Link>
 				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
@@ -25,7 +25,7 @@ export const Navbar = () => {
 							<Link className="nav-link" to="/contact-list">ContactList</Link>
 						</li>
 					</ul>
-					<form className="d-flex" role="search">
+					<div className="d-flex" role="search">
 						<input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
 						<div className="dropdown">
 							<button
@@ -36,20 +36,32 @@ export const Navbar = () => {
 								Favoritos ({store.favorites.length})
 							</button>
 
-							<ul className="dropdown-menu">
+							<ul className="dropdown-menu dropdown-menu-end">
 								{store.favorites.length === 0 && (
-									<li className="dropdown-item">
+									<li className="dropdown-item text-muted">
 										No hay favoritos
 									</li>
 								)}
 
 								{store.favorites.map((item, index) => (
-									<li key={index} className="dropdown-item">
-										{item.name} ({item.type})
+									<li
+										key={index}
+										className="dropdown-item d-flex justify-content-between align-items-center"
+									>
+										<span>
+											{item.name} ({item.type})
+										</span>
+
 										<button
 											type="button"
 											className="btn btn-sm btn-danger ms-2"
-											onClick={() => actions.removeFavorite(index)}
+											onClick={(e) => {
+												e.stopPropagation(); // evita que Bootstrap interfiera
+												dispatch({
+													type: "remove_favorite",
+													payload: index
+												});
+											}}
 										>
 											<i className="fa-solid fa-trash-can"></i>
 										</button>
@@ -57,7 +69,7 @@ export const Navbar = () => {
 								))}
 							</ul>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</nav>
